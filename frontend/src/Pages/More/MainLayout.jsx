@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Navbar} from "../../Components/Navbar";
+import { FixedToTheTop, FixedWhatsappIcon } from "../../Components/FixedIcon";
+import Footer from "../../Components/Footer";
 
 const MainLayout = () => {
 
@@ -10,10 +12,11 @@ const MainLayout = () => {
         <Outlet />
       </div>
       <div className=" w-full">
-      {/* <Footer/> */}
+      <Footer/>
 
       </div>
-
+      <FixedWhatsappIcon/>
+      <FixedToTheTop/>
     </div>
   );
 };
