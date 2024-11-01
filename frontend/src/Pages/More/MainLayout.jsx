@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <div className="relative overflow-hidden">
       <Navbar/>
-      <div className="z-10 bg-indigo-50">
+      <div className="z-10">
         <Outlet />
       </div>
       <div className=" w-full">
