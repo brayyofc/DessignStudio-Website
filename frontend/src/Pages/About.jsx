@@ -1,99 +1,96 @@
 import { Button } from "@material-tailwind/react";
+import { FaBullseye, FaLightbulb } from "react-icons/fa";
 
 function About() {
   return (
-    <div className=" pt-52 md:py-24 grid place-items-center gap-6">
-      <div className="pt-4 pb-8">
-        <div className=" text-3xl font-bold text-center">About Us</div>
-        <p className=" text-2xl text-center">
-          We are well-known brand in the printing industry. which markets paper,
-          printing & stationery products across India.
+    <div className="md:py-24 px-4 grid place-items-center bg-gray-50">
+      {/* About Us Section */}
+      <div className="pt-8 pb-12 px-6 bg-black text-white rounded-lg shadow-lg w-full md:w-3/4">
+        <h1 className="text-4xl font-extrabold text-center mb-4">About Us</h1>
+        <p className="text-xl text-center max-w-2xl mx-auto">
+          We are a renowned brand in the printing industry, providing a wide
+          range of printing and stationery products across India.
         </p>
       </div>
-      <div className=" lg:flex justify-between gap-24 w-8/12">
-        <div className="">
-          <p className=" text-lg font-semibold text-green-700 m-2 p-2 text-start">
+
+      {/* Company Info Section */}
+      <div className="mt-12 text-center lg:text-start lg:flex items-center justify-between w-full md:w-3/4 gap-8">
+        <div className=" space-y-6">
+          <p className="text-lg font-semibold text-green-700">
             Himvat Business Solutions
           </p>
-
-          <p className="font-bold text-xl m-2 p-2 text-start">
-            We started as a humble business in 2017 & bloomed into a service
-            industry that embodied quality, innovation, and user-friendliness.
+          <p className="text-xl font-bold text-gray-800">
+            Since our start in 2017, we've grown into a quality-driven,
+            innovative printing service that prioritizes user satisfaction.
           </p>
-
-          <p className=" text-md m-2 p-2 text-start">
-            Based in Delhi and supported by a team of professionals and trained
-            employees, we have a network spread across India. We can execute
-            large or small orders within a stipulated time adhering to the
-            highest level of our quality standards.
+          <p className="text-md text-gray-700">
+            Based in Delhi with a network across India, we handle both large and
+            small orders, ensuring the highest quality standards every time.
           </p>
-
-          <p className=" text-md m-2 p-2 text-start">
-            We provide a one-stop facility where a wide range of products
-            related to school, universities and office printing & stationery
-            solutions for corporate houses & educational institutions are
-            offered under one roof.
+          <p className="text-md text-gray-700">
+            We are a one-stop solution for all printing and stationery needs,
+            offering products for schools, universities, and corporate offices
+            under one roof.
           </p>
-
-          <p className=" font-bold text-start m-2 p-2">
-            For us, our motto is our guiding light “Great Value, Great Products”
+          <p className="font-bold text-gray-800">
+            “Great Value, Great Products” – Our Guiding Motto
           </p>
-
-          <Button size="lg" className=" bg-green-700 m-2 font-bold">
+          <Button size="lg" className="bg-green-700 mt-4 font-bold">
             Contact Us Now
           </Button>
         </div>
-          <img
-            className=" w-3/5 aspect-square place-content-center items-center justify-center"
-            src="https://himvat.in/wp-content/uploads/2023/11/banner-printing-service-500x500-1.webp"
-            alt=""
-          />
+        <img
+          className="w-full rounded-lg shadow-lg mt-6 lg:mt-0 lg:w-2/3"
+          src="https://himvat.in/wp-content/uploads/2023/11/banner-printing-service-500x500-1.webp"
+          alt="Printing Services"
+        />
       </div>
 
-      <div className=" bg-gray-300 md:flex md:justify-evenly w-full">
-        <div className=" m-2 p-1">
-          <p className=" font-bold text-lg">Talk To Us</p>
-          <p>+91 0000000000</p>
+      {/* Our Mission & Vision Section */}
+      <div className="mt-16 bg-black text-white py-10 rounded-lg shadow-lg w-full md:w-3/4 grid md:grid-cols-2 gap-8">
+        <div className="flex flex-col items-center md:items-start space-y-4 px-6">
+          <FaBullseye className="text-4xl text-green-500" />
+          <h2 className="text-3xl font-extrabold">Our Mission</h2>
+          <p className="text-md text-center md:text-left">
+            We aim to offer innovative, user-friendly products that strike a
+            perfect balance between quality, price, and environmental
+            responsibility.
+          </p>
         </div>
-        <div className=" m-2 p-1">
-          <p className=" font-bold text-lg">Mail Us</p>
-          <p>info@dessign.in</p>
-        </div>
-        <div className=" m-2 p-1">
-          <p className=" font-bold text-lg">Our Location</p>
-          <p>Delhi, India</p>
+        <div className="flex flex-col items-center md:items-end space-y-4 px-6">
+          <FaLightbulb className="text-4xl text-yellow-500" />
+          <h2 className="text-3xl font-extrabold">Our Vision</h2>
+          <p className="text-md text-center md:text-right">
+            Our vision is to consistently bring new ideas and improvements to
+            our products, making them more accessible and eco-friendly for all.
+          </p>
         </div>
       </div>
 
-      <div className=" lg:flex justify-center gap-24 w-8/12">
-        <div className=" m-2 p-2 lg:w-[50%]">
-          <img
-            className=" w-[100%] place-content-center items-center justify-center"
-            src="https://himvat.in/wp-content/uploads/2023/11/young-friendly-operator-woman-agent-600nw-712414813.webp"
-            alt=""
+      {/* Get in Touch Section */}
+      <div className="mt-16 bg-gray-100 p-8 rounded-lg shadow-lg w-full md:w-3/4">
+        <h2 className="text-3xl font-extrabold text-center mb-8">
+          Get in Touch
+        </h2>
+        <form className="flex flex-col md:flex-row items-center gap-4">
+          <input
+            type="text"
+            placeholder="Name"
+            className="p-3 border border-gray-300 rounded-lg w-full md:w-1/3"
           />
-        </div>
-        <div className=" lg:w-[50%] ">
-          <p className=" font-bold text-xl m-2 p-2 text-start">
-            We are expert professionals
-          </p>
-
-          <p className=" text-md m-2 p-2 text-start">
-            Our team of expert professionals constantly endeavor to provide our
-            customers with innovations and user-friendly products that make a
-            perfect balance between quality, price, and environment.
-          </p>
-
-          <p className=" text-md m-2 p-2 text-start">
-            Not only do we supply our products to distributors & dealers, but we
-            also provide customized work for offices, schools, and private and
-            Government Organizations , concerning Designs, thickness, quality,
-            and size.
-          </p>
-          <Button size="lg" className=" bg-green-700 m-2 font-bold">
-            Contact Us Now
+          <input
+            type="email"
+            placeholder="Email"
+            className="p-3 border border-gray-300 rounded-lg w-full md:w-1/3"
+          />
+          <textarea
+            placeholder="Message"
+            className="p-3 border border-gray-300 rounded-lg w-full md:w-1/3 h-20 resize-none"
+          />
+          <Button size="lg" className="bg-green-700 mt-4 font-bold">
+            Send Message
           </Button>
-        </div>
+        </form>
       </div>
     </div>
   );
