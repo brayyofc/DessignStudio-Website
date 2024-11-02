@@ -27,8 +27,8 @@ export function Navbar() {
 
 
             <ul className='flex justify-evenly w-1/2 px-36 text-sm font-semibold items-center'>
-                <Link to="#"><li className='cursor-pointer hover:text-blue-600'>Home</li></Link>
-                <Link to="#"><li className='cursor-pointer hover:text-blue-600'>About</li></Link>
+                <Link to="/"><li className='cursor-pointer hover:text-blue-600'>Home</li></Link>
+                <Link to="/about"><li className='cursor-pointer hover:text-blue-600'>About</li></Link>
                 <Menu className="">
                     <MenuHandler>
                     <Link to="#"><p className='flex gap-2 cursor-pointer hover:text-blue-600 items-center'>Our Services <MdOutlineKeyboardArrowDown/></p></Link>

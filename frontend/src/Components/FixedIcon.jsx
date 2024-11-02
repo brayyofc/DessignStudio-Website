@@ -11,9 +11,9 @@ export const FixedWhatsappIcon = () => {
   )
 }
 
-export const FixedToTheTop = () => {
+export const FixedToTheTop = ({scrollToTop}) => {
     return (
-      <div className='fixed bottom-6 cursor-pointer right-12 rounded-xl bg-gray-400/70 hover:bg-gray-400 p-2'>
+      <div onClick={scrollToTop} className='fixed bottom-6 cursor-pointer right-12 rounded-xl bg-gray-400/70 hover:bg-gray-400 p-2'>
           <MdKeyboardArrowUp className='text-white text-3xl'/>
       </div>
     )
