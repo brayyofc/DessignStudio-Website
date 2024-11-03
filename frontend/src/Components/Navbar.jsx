@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export function Navbar() {
     return (
-        <nav className='py-4 fixed w-full bg-white shadow-md flex items-center justify-center'>
+        <nav className='py-4 z-20 fixed w-full bg-white shadow-md flex items-center justify-center'>
             <svg width="112" height="44" viewBox="0 0 112 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10.5" cy="23.5" r="8.5" stroke="#00AEEF" stroke-width="4" />
                 <rect x="17" width="5" height="29" fill="#00AEEF" />
@@ -29,7 +29,7 @@ export function Navbar() {
             <ul className='flex justify-evenly w-1/2 px-36 text-sm font-semibold items-center'>
                 <Link to="/"><li className='cursor-pointer hover:text-blue-600'>Home</li></Link>
                 <Link to="/about"><li className='cursor-pointer hover:text-blue-600'>About</li></Link>
-                <Menu className="">
+                <Menu allowHover className="">
                     <MenuHandler>
                     <Link to="#"><p className='flex gap-2 cursor-pointer hover:text-blue-600 items-center'>Our Services <MdOutlineKeyboardArrowDown/></p></Link>
                     </MenuHandler>
@@ -44,16 +44,7 @@ export function Navbar() {
                         <MenuItem>Menu Item 8</MenuItem>
                         <MenuItem>Menu Item 9</MenuItem>
                         <MenuItem>Menu Item 10</MenuItem>
-                        <MenuItem>Menu Item 11</MenuItem>
-                        <MenuItem>Menu Item 12</MenuItem>
-                        <MenuItem>Menu Item 13</MenuItem>
-                        <MenuItem>Menu Item 14</MenuItem>
-                        <MenuItem>Menu Item 15</MenuItem>
-                        <MenuItem>Menu Item 16</MenuItem>
-                        <MenuItem>Menu Item 17</MenuItem>
-                        <MenuItem>Menu Item 18</MenuItem>
-                        <MenuItem>Menu Item 19</MenuItem>
-                        <MenuItem>Menu Item 20</MenuItem>
+                        
                     </MenuList>
                 </Menu>
                 <Link to="#"><li className='cursor-pointer hover:text-blue-600'>Work</li></Link>

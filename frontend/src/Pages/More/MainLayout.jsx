@@ -8,9 +8,9 @@ const MainLayout = () => {
     window.scrollTo({behavior:"smooth",top:0})
   }
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden ">
       <Navbar />
-      <div className="z-10">
+      <div className="z-10 ">
         <Outlet />
       </div>
       <div className=" w-full">
