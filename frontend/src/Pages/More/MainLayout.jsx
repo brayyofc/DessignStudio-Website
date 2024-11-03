@@ -4,8 +4,8 @@ import { FixedToTheTop, FixedWhatsappIcon } from "../../Components/FixedIcon";
 import Footer from "../../Components/Footer";
 
 const MainLayout = () => {
-  function scrollToTop(){
-    window.scrollTo({behavior:"smooth",top:0})
+  function scrollToTop() {
+    window.scrollTo({ behavior: "smooth", top: 0 });
   }
   return (
     <div className="relative overflow-hidden ">
@@ -17,7 +17,7 @@ const MainLayout = () => {
         <Footer />
       </div>
       <FixedWhatsappIcon />
-      <FixedToTheTop scrollToTop={scrollToTop}/>
+      <FixedToTheTop scrollToTop={scrollToTop} />
     </div>
   );
 };
