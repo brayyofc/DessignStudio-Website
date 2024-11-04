@@ -13,7 +13,7 @@ function Contact() {
         <p>›</p>
         <h1 className="font-sans">Contact Us</h1>
       </div>
-      <div className="flex flex-col lg:flex-row w-full justify-center px-10 md:px-20 lg:px-72 py-5 md:py-10 gap-10">
+      <div className="flex flex-col lg:flex-row w-full justify-center px-10 md:px-20 xl:px-72 py-5 md:py-10 gap-10">
         <div className="lg:w-1/2">
           <h1 className="font-bold text-3xl md:text-4xl py-2 md:py-5">
             Keep in touch with us
