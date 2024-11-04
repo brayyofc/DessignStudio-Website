@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="text-xl text-black h-full items-center mt-20">
+    <div className="text-xl text-black h-full items-center mt-20 grid place-items-center">
       <div className="bg-gray-100 h-16 flex items-center w-full justify-center gap-2 text-base">
         <a
           href="/"
@@ -13,7 +13,7 @@ function Contact() {
         <p>›</p>
         <h1 className="font-sans">Contact Us</h1>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center px-10 md:px-20 py-5 md:py-10 gap-10">
+      <div className="flex flex-col lg:flex-row w-full justify-center px-10 md:px-20 lg:px-72 py-5 md:py-10 gap-10">
         <div className="lg:w-1/2">
           <h1 className="font-bold text-3xl md:text-4xl py-2 md:py-5">
             Keep in touch with us
@@ -64,7 +64,7 @@ function Contact() {
             className="bg-gray-100 px-4 py-2 text-base  placeholder:text-gray-600  focus:outline-cyan-400 focus:outline rounded-md w-full"
           />
           <textarea
-            rows="5"
+            rows="10"
             type="text"
             placeholder="Message"
             className="bg-gray-100 px-4 py-2 text-base  placeholder:text-gray-600  focus:outline-cyan-400 focus:outline rounded-md w-full mt-5"
@@ -84,7 +84,7 @@ function Contact() {
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          className="w-full"
+          className="w-screen"
         ></iframe>
       </div>
     </div>

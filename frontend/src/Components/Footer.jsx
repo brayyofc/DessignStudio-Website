@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaCopyright, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 import ReadyTouch from "../assets/illustrations/GetInTouch.png";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Footer() {
+  const location = useLocation();
+  const [isContactPage, setIsContactPage] = useState(false);
+
+  useEffect(() => {
+    setIsContactPage(location.pathname === "/contact");
+  }, [location.pathname]);
   return (
     <>
-      <footer className="flex flex-col md:flex-row justify-center items-center gap-6 p-8 md:py-24 text-black">
+      {!isContactPage&&<footer className="flex flex-col md:flex-row justify-center items-center gap-6 p-8 md:py-24 text-black">
         <img src={ReadyTouch} className="w-64 md:w-96 aspect-square" alt="Get in Touch" />
         <div className="text-center md:text-left">
           <h1 className="text-2xl md:text-3xl">Ready for Magic?</h1>
@@ -16,7 +22,7 @@ function Footer() {
             <HiOutlineArrowLongRight className="text-6xl md:text-9xl text-blue-500 mt-4" />
           </Link>
         </div>
-      </footer>
+      </footer>}
 
       <div className="w-full bg-black text-white pt-4 xl:px-64">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-8 lg:px-32 py-8">
