@@ -34,9 +34,10 @@ function Services() {
   ];
 
   return (
-    <div className=" flex flex-col md:flex-row items-center justify-center py-16 px-8 bg-white space-y-8 md:space-y-0 md:space-x-8">
+    <div className="grid place-items-center pt-12">
+        <div className=" flex flex-col xl:flex-row items-center justify-center py-16 px-8 bg-white space-y-8 md:space-y-0 md:space-x-24 w-9/12">
       {/* Left Section */}
-      <div className="text-left md:w-1/3 space-y-2">
+      <div className="text-left lg:w-1/3 space-y-2 pb-6">
         <h2 className="text-3xl lg:text-5xl font-bold text-indigo-900 leading-tight">
           LEARN MORE ABOUT OUR
         </h2>
@@ -46,7 +47,7 @@ function Services() {
       </div>
 
       {/* Right Section */}
-      <div className="md:flex">
+      <div className="md:flex w-full gap-4">
         <div>
           <Card className=" h-full">
             <img
@@ -87,6 +88,7 @@ function Services() {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

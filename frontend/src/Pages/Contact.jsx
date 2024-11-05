@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 function Contact() {
   return (
     <div className="text-xl text-black h-full items-center mt-20 grid place-items-center">
-      <Breadcrumbs separator={<MdOutlineKeyboardArrowRight/>} className='bg-gray-300 w-screen flex justify-center py-4 mb-16'>
-                <Link to="/" className="opacity-60">
-                    Home
-                </Link>
-                <Link to="/services" className="">
-                    Contact
-                </Link>
-        </Breadcrumbs>
+      <Breadcrumbs separator={<MdOutlineKeyboardArrowRight />} className='bg-gray-300 w-screen flex justify-center py-4 mb-16'>
+        <Link to="/" className="opacity-60">
+          Home
+        </Link>
+        <Link to="/services" className="">
+          Contact
+        </Link>
+      </Breadcrumbs>
       <div className="flex flex-col lg:flex-row w-full justify-center  md:px-20 xl:px-72 py-5 md:py-0 gap-10">
         <div className="lg:w-1/2">
           <h1 className="font-bold text-3xl md:text-4xl py-2 md:py-5">
