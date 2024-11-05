@@ -1,13 +1,26 @@
 import { Button } from "@material-tailwind/react";
 import { FaBullseye, FaLightbulb } from "react-icons/fa";
 import { useState } from "react";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function About() {
   const clientImages = [
-    "https://himvat.in/wp-content/uploads/2023/11/png-1-150x150.png",
-    "https://himvat.in/wp-content/uploads/2023/11/logo4-1-150x150.jpg",
-    "https://himvat.in/wp-content/uploads/2023/11/logo3-1-150x150.jpg",
-    "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg",
+    { image: "https://himvat.in/wp-content/uploads/2023/11/png-1-150x150.png" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo4-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo3-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/png-1-150x150.png" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo4-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo3-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/png-1-150x150.png" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo4-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo3-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg" },
+    { image: "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,14 +28,14 @@ function About() {
   // Function to go to the next slide
   const nextSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === clientImages.length - 1 ? 0 : prevSlide + 1
+      (prevSlide + 1) % clientImages.length
     );
   };
 
   // Function to go to the previous slide
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? clientImages.length - 1 : prevSlide - 1
+      (prevSlide - 3 + clientImages.length) % clientImages.length
     );
   };
 
@@ -97,43 +110,28 @@ function About() {
           Our Clients
         </h2>
         <div className="relative flex items-center justify-center">
-          <button
+          {/* <button
             onClick={prevSlide}
             className="absolute left-4 bg-white text-gray-800 p-2 rounded-full shadow-md focus:outline-none"
           >
             ❮
-          </button>
+          </button> */}
 
           <div className="w-full overflow-hidden">
-            <div
-              className="flex transition-transform duration-500"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {clientImages.map((src, index) => (
-                <div
-                  key={index}
-                  className="min-w-full flex justify-center items-center"
-                >
-                  <img
-                    src={src}
-                    alt={`Client ${index + 1}`}
-                    className="w-40 h-40 object-cover rounded-lg shadow-lg"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 bg-white text-gray-800 p-2 rounded-full shadow-md focus:outline-none"
-          >
-            ❯
-          </button>
+              <Splide options={{
+                rewind: true, 
+                perPage: "4", 
+                perMove:"1",
+              }} aria-label="React Splide Example" className="w-full">
+                {clientImages.map(data => <SplideSlide>
+                  <img src={data.image} alt="Image 1" />
+                </SplideSlide>)}
+              </Splide>
+              </div>
         </div>
       </div>
     </div>
-  );
+      );
 }
 
 export default About;
