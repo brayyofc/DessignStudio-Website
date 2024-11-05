@@ -1,4 +1,6 @@
-import { Card, Typography, Chip } from "@material-tailwind/react";
+import { Card, Typography, Chip, Breadcrumbs } from "@material-tailwind/react";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function Services() {
   const services = [
@@ -34,8 +36,14 @@ function Services() {
   ];
 
   return (
-    <div className="grid place-items-center pt-12">
-        <div className=" flex flex-col xl:flex-row items-center justify-center py-16 px-8 bg-white space-y-8 md:space-y-0 md:space-x-24 w-9/12">
+    <div className="grid place-items-center pt-20">
+        <Breadcrumbs separator={<MdOutlineKeyboardArrowRight />} className='bg-gray-300 w-screen flex justify-center py-4 mb-16'>
+              <Link to="/" className="opacity-60">
+                  Home
+              </Link>
+              <Link to="/services" className="capitalize">Our Services</Link>
+          </Breadcrumbs>
+        <div className=" flex flex-col xl:flex-row items-center justify-center py-6 px-8 bg-white space-y-8 md:space-y-0 md:space-x-24 w-9/12">
       {/* Left Section */}
       <div className="text-left lg:w-1/3 space-y-2 pb-6">
         <h2 className="text-3xl lg:text-5xl font-bold text-indigo-900 leading-tight">
