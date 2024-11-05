@@ -1,7 +1,31 @@
 import { Button } from "@material-tailwind/react";
 import { FaBullseye, FaLightbulb } from "react-icons/fa";
+import { useState } from "react";
 
 function About() {
+  const clientImages = [
+    "https://himvat.in/wp-content/uploads/2023/11/png-1-150x150.png",
+    "https://himvat.in/wp-content/uploads/2023/11/logo4-1-150x150.jpg",
+    "https://himvat.in/wp-content/uploads/2023/11/logo3-1-150x150.jpg",
+    "https://himvat.in/wp-content/uploads/2023/11/logo1-1-150x150.jpg",
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Function to go to the next slide
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === clientImages.length - 1 ? 0 : prevSlide + 1
+    );
+  };
+
+  // Function to go to the previous slide
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? clientImages.length - 1 : prevSlide - 1
+    );
+  };
+
   return (
     <div className="md:py-24 px-4 grid place-items-center bg-gray-50">
       {/* About Us Section */}
@@ -67,30 +91,46 @@ function About() {
         </div>
       </div>
 
-      {/* Get in Touch Section */}
-      <div className="mt-16 bg-gray-100 p-8 rounded-lg shadow-lg w-full md:w-3/4">
+      {/* Our Clients Section */}
+      <div className="mt-16 w-full md:w-3/4">
         <h2 className="text-3xl font-extrabold text-center mb-8">
-          Get in Touch
+          Our Clients
         </h2>
-        <form className="flex flex-col md:flex-row items-center gap-4">
-          <input
-            type="text"
-            placeholder="Name"
-            className="p-3 border border-gray-300 rounded-lg w-full md:w-1/3"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="p-3 border border-gray-300 rounded-lg w-full md:w-1/3"
-          />
-          <textarea
-            placeholder="Message"
-            className="p-3 border border-gray-300 rounded-lg w-full md:w-1/3 h-20 resize-none"
-          />
-          <Button size="lg" className="bg-green-700 mt-4 font-bold">
-            Send Message
-          </Button>
-        </form>
+        <div className="relative flex items-center justify-center">
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 bg-white text-gray-800 p-2 rounded-full shadow-md focus:outline-none"
+          >
+            ❮
+          </button>
+
+          <div className="w-full overflow-hidden">
+            <div
+              className="flex transition-transform duration-500"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {clientImages.map((src, index) => (
+                <div
+                  key={index}
+                  className="min-w-full flex justify-center items-center"
+                >
+                  <img
+                    src={src}
+                    alt={`Client ${index + 1}`}
+                    className="w-40 h-40 object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 bg-white text-gray-800 p-2 rounded-full shadow-md focus:outline-none"
+          >
+            ❯
+          </button>
+        </div>
       </div>
     </div>
   );
